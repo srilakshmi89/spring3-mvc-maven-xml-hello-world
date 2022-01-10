@@ -14,7 +14,7 @@ label 'slave1'
     }
         stage('build'){
          steps{
-             sh"mvn packagessss"
+             sh"mvn package"
          }
 post {
         failure {
