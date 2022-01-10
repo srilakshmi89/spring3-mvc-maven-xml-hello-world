@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+label 'slave1'
+}
     stages{
         stage('scm'){
           steps{
@@ -8,7 +10,7 @@ pipeline{
     }
         stage('build'){
          steps{
-             sh"mvn packagesssss"
+             sh"mvn package"
          }
 post {
         failure {
