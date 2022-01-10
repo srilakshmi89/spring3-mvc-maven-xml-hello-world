@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-     label 'slave1'
-       }
+    agent any
     stages{
         stage('scm'){
           steps{
@@ -10,9 +8,23 @@ pipeline{
     }
         stage('build'){
          steps{
-             sh"mvn package"
+             sh"mvn packagesssss"
          }
+post {
+        failure {
+            script {
+                currentBuild.result = 'FAILURE'
+            }
+        }
+
+        always {
+            step([$class: 'Mailer',
+                notifyEveryUnstableBuild: true,
+                recipients: "v.srilakshmi89@gmail.com",
+                sendToIndividuals: true])
+        }
+    }
+}
      }
     
-}
 }
