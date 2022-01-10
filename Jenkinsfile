@@ -2,6 +2,10 @@ pipeline{
     agent {
 label 'slave1'
 }
+ tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "maven"
+   }
     stages{
         stage('scm'){
           steps{
@@ -10,7 +14,7 @@ label 'slave1'
     }
         stage('build'){
          steps{
-             sh"mvn package"
+             sh"mvn packagessss"
          }
 post {
         failure {
