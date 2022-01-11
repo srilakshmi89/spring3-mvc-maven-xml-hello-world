@@ -15,12 +15,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: mvn package
-      -name: tomcat deploy
-       run: curl -v -u admin:admin -t /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war'http://ec2-3.38.233.ap-south-
+    
+     - uses: actions/checkout@v2
+     - name: Run a one-line script
+       run: mvn package
+     -name: tomcat deploy
+      run: curl -v -u admin:admin -t /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war'http://ec2-3.38.233.ap-south-
 1.compute.amazonaws.com:8080/manager/text/deploy?path=/github_action_spring' 
