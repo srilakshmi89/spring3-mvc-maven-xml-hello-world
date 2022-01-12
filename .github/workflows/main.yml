@@ -12,5 +12,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build
       run: mvn package
-    - name: tomcat deployment
+    - name: tomcat deploy
       run: curl -v -u ${{ secrets.USER_NAME }}:${{ secrets.USER_PASSWORD }} -T /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'http://ec2-65.1.86.254.ap-south-1.compute.amazonaws.com:8081/manager/text/deploy?path=/github-tomcat-deployment&update=true'
