@@ -7,7 +7,7 @@ on:
 jobs:
 
   build:
-    runs-on: self-hosted
+    runs-on: my server
     steps:
     - uses: actions/checkout@v2
     - name: Run build
